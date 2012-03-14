@@ -4,6 +4,7 @@ $con = mysql_connect('localhost','scott');
 $result = mysql_query("SELECT * FROM GAMES");
 echo('<a href="http://localhost">Home</a> <br>');
 while($game = mysql_fetch_array($result)){
-  print($game['TITLE']." is rated ".$game['RATING'].'<br>');
+  print($game['TITLE']." | ".$game['RATING']." | ".$game['YEAR'].'<br>');
+  print("---------------------------------------<br>");
 }
 ?>
