@@ -17,7 +17,8 @@ for($i=0; $i<=660; $i+=60){
       $title = str_replace("(Xbox 360/ Kinect)", "", $title);
       $title = str_replace("(Xbox 360/Kinect)", "", $title);    
       $title = str_replace("- Pre-Owned", "", $title);  
-      $title = trim($title);      
+      $title = trim($title); 
+      $title = addslashes($title);     
       $rating = $game->children(3)->plaintext;
       $rating = str_replace("ESRB Rating: ", "", $rating);
       $price = $game->children(2)->children(1)->first_child()->first_child()->plaintext; //price
