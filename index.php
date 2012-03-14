@@ -26,5 +26,7 @@ Game Name: <input type="text" name="title" />
 
 
 echo('<a href="http://localhost/xbox.php">List of All Xbox Games</a>');
+echo('<a href="http://localhost/vendors.php">List of All Vendors Games</a>');
+
 
 ?>

@@ -18,7 +18,7 @@ print("<br><br><br>");
 print("<strong>DELETE A GAME FROM THE DATABASE</strong>");
 print('<form name="delete" action="xbox_delete.php" method="post">
 Game Name: <input type="text" name="title" />
-<input type="submit" value="Add" />
+<input type="submit" value="Delete" />
 </form>');
 
 
@@ -26,5 +26,7 @@ Game Name: <input type="text" name="title" />
 
 
 echo('<a href="http://localhost/xbox.php">List of All Xbox Games</a>');
+echo('<a href="http://localhost/xbox.php">List of All Vendors Games</a>');
+
 
 ?>
