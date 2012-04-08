@@ -1,4 +1,9 @@
 <?
+/*SELLS:
+
+Address, System_Name, Game  ,Current_Condition, Price	
+  X           X           X         X                X
+
 include('simple_html_dom.php'); 
 /*connect to mysql */
 $con = mysql_connect('localhost','scott');
@@ -16,16 +21,30 @@ for($i=0; $i<=660; $i+=60){
       $title = str_replace("(Xbox 360)", "", $title);
       $title = str_replace("(Xbox 360/ Kinect)", "", $title);
       $title = str_replace("(Xbox 360/Kinect)", "", $title);    
+      $is_preowned = strpos($title, "Pre-Owned");
+      if($is_preowned === false){
+        $condition = "New";
+      }
+      else{
+        $condition = "Used";
+      }      
       $title = str_replace("- Pre-Owned", "", $title);  
       $title = trim($title); 
       $title = addslashes($title);     
       $rating = $game->children(3)->plaintext;
       $rating = str_replace("ESRB Rating: ", "", $rating);
       $price = $game->children(2)->children(1)->first_child()->first_child()->plaintext; //price
-      $query = "INSERT INTO GAMES (TITLE, RATING) VALUES ('$title', '$rating')
+      $system_name = Xbox360
+      $address = www.walmart.com
+      //query to add to the sells database      
+      $sells_query = "INSERT INTO Sells (Address, System_Name, Game, Current_Condition, Price) 
+                     VALUES ($address, $system_name, $title, $condition, $price)";
+      print $sells_query."<br">;
+      //query to add it into the games database
+      $games_query = "INSERT INTO GAMES (TITLE, RATING) VALUES ('$title', '$rating')
                   ON DUPLICATE KEY UPDATE TITLE = Values(TITLE), RATING = Values(RATING);";
-      mysql_query($query);
-      print $query."<br>";
+      //mysql_query($query);
+      //print $sells_query."<br>";
       }
   }
 }
