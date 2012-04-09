@@ -1,0 +1,14 @@
+.sections_table {
+font-family: 'Arial', 'Tahoma', sans-serif;
+font-size: 14pt;
+float: left;
+}
+
+.pull-content{
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
