@@ -56,6 +56,7 @@ for($z=1; $z<=3; $z++){
     }
     $title = str_replace("&nbsp;", '', $title);
     $title = trim($title);
+    $title = addslashes($title);
     $game_query = "INSERT INTO GAMES (TITLE) VALUES ('$title')
                   ON DUPLICATE KEY UPDATE TITLE = Values(TITLE);";
 
