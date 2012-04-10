@@ -1,5 +1,7 @@
 <?
 include('simple_html_dom.php'); 
+
+echo "USE cs411_phpfogapp_com;<br>";
 /*SELLS:
 
 Address, System_Name, Game  ,Current_Condition, Price	
@@ -31,21 +33,21 @@ for($i=0; $i<=660; $i+=60){
       }      
       $title = str_replace("- Pre-Owned", "", $title);  
       $title = trim($title); 
-      $title = addslashes($title);     
+      $title = mysql_real_escape_string($title);     
       $rating = $game->children(3)->plaintext;
       $rating = str_replace("ESRB Rating: ", "", $rating);
       $price = $game->children(2)->children(1)->first_child()->first_child()->plaintext; //price
-      $system_name = "Xbox360";
+      $price = substr($price, 1);
+      $system_name = "XBOX 360";
       $address = "www.walmart.com";
       //query to add to the sells database      
-      $sells_query = "INSERT INTO Sells (Address, System_Name, Game, Current_Condition, Price) 
-                     VALUES ('$address', '$system_name', '$title', '$condition', '$price')";
-      print $sells_query."<br>";
+      $sells_query = "INSERT IGNORE INTO Sells (Address, System_Name, Game_Title, Current_Condition, Price) 
+                     VALUES ('$address', '$system_name', '$title', '$condition', $price);";
       //query to add it into the games database
-      $games_query = "INSERT INTO GAMES (TITLE, RATING) VALUES ('$title', '$rating')
-                  ON DUPLICATE KEY UPDATE TITLE = Values(TITLE), RATING = Values(RATING);";
-      //mysql_query($query);
-      //print $sells_query."<br>";
+      $games_query = "INSERT INTO Games (Title, Rating) VALUES ('$title', '$rating')
+                  ON DUPLICATE KEY UPDATE Title=VALUES(Title);";
+     // print $games_query."<br>";
+      print $sells_query."<br>";
       }
   }
 }
