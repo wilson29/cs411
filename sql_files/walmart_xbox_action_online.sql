@@ -39,7 +39,6 @@ INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', '
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Lego Harry Potter: Years 5-7');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Batman: Arkham City');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Resident Evil 5');
-INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Spiderman-Web Of Shadows');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Star Wars: The Force Unleashed');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Dead Rising 2');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'How to Train Your Dragon');
@@ -212,7 +211,6 @@ INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', '
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Star Wars: Force Unleashed II Collector\'s Editon');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Binary Domain');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Oblivion Platinum Hits');
-INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Spiderman: Shattered Dimensions');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Dead Rising 2: Off the Record');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Green Lantern: Rise of Manhunters');
 INSERT IGNORE INTO ofType (Category, Game_Title) VALUES ('Action & Adventure', 'Ace Combat: Assault Horizon w/ Exclusive Skill Set');
